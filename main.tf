@@ -182,7 +182,7 @@ resource "aws_route_table" "private_rt_a" {
 # Subnetz in AZ A für private Instanzen
 resource "aws_subnet" "subnet_a_private" {
   vpc_id     = aws_vpc.main.id
-  cidr_block = "10.0.4.0/24" # Passen Sie die CIDR-Block-Definition entsprechend an
+  cidr_block = "10.0.4.0/24" 
   availability_zone = local.az_a
   map_public_ip_on_launch = false # Keine öffentlichen IPs für private Subnetze
 
@@ -222,7 +222,7 @@ resource "aws_route_table" "private_rt_b" {
 # Subnetz in AZ B für private Instanzen
 resource "aws_subnet" "subnet_b_private" {
   vpc_id     = aws_vpc.main.id
-  cidr_block = "10.0.5.0/24" # Passen Sie die CIDR-Block-Definition entsprechend an
+  cidr_block = "10.0.5.0/24" 
   availability_zone = local.az_b
   map_public_ip_on_launch = false
 
@@ -236,11 +236,6 @@ resource "aws_route_table_association" "private_rt_b" {
   route_table_id = aws_route_table.private_rt_b.id
 }
 
-# Wiederholen Sie die oben genannten Schritte für die AZ C, um private Subnetze und NAT Gateways in AZ C zu erstellen.
-
-# Beachten Sie, dass Sie auch die Sicherheitsgruppen für die privaten Instanzen entsprechend konfigurieren müssen, um den Kommunikationsbedarf zu erfüllen.
-
-# Stellen Sie sicher, dass Sie die Variablen und andere Konfigurationen entsprechend anpassen, um Ihre speziellen Anforderungen und Präferenzen zu berücksichtigen.
 
 resource "aws_nat_gateway" "nat_c" {
   allocation_id = aws_eip.nat_c.id
@@ -265,7 +260,7 @@ resource "aws_route_table" "private_rt_c" {
 # Subnetz in AZ c für private Instanzen
 resource "aws_subnet" "subnet_c_private" {
   vpc_id     = aws_vpc.main.id
-  cidr_block = "10.0.6.0/24" # Passen Sie die CIDR-Block-Definition entsprechend an
+  cidr_block = "10.0.6.0/24" 
   availability_zone = local.az_c
   map_public_ip_on_launch = false
 
