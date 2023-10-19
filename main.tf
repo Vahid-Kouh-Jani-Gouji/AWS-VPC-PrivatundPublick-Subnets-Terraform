@@ -7,7 +7,6 @@
 
 
 
-
 # # Erstelle jetzt in jedem AZ ein weiteres privates Subnetz. Verwende hierfür ein Nat Gateway.
 
 # # Nat Gateway in AZ A
