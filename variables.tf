@@ -22,3 +22,15 @@ variable "subnet_cidr" {
   type        = list(string)
   
 }
+
+variable "ec2_ami" {
+  description = "Amazon machine Image"
+  type = string
+  
+}
+
+variable "instance_type" {
+  description = "EC2 Type"
+  type = string
+  
+}
